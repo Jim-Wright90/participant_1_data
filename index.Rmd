@@ -94,7 +94,7 @@ demo_tbl
 
 ## Outcome Measurements 
 
-### GAS Hierarchy - Number of minutes per class engaged in online Spanish lecture (60 minute class)
+### GAS Hierarchy - Number of minutes per class engaged in online Literature lecture (60 minute class)
 
 ```{r, include=FALSE}
 head(gas)
@@ -379,13 +379,13 @@ class_parent_2_plot
 
 #### CLASS Self 1
 
-```{r, include=FALSE, fig.height=8, fig.width=10}
+```{r, include=TRUE, fig.height=8, fig.width=10}
 class_self_1_plot
 ```
 
 #### CLASS Self 2
 
-```{r, include=FALSE, fig.height=8, fig.width=11}
+```{r, include=TRUE, fig.height=8, fig.width=11}
 class_self_2_plot
 ```
 
@@ -467,7 +467,7 @@ status_plot_all <- ggplot(status_all, aes(session, status)) +
   theme_classic() +
   theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
   labs(x = "Session",
-       y = "Minutes Engaged in Online Spanish Lecture\n (Weekly Average)",
+       y = "Minutes Engaged in Online Literature Lecture\n (Weekly Average)",
        title = "Status Tracking Goal",
        caption = "60-minute lecture, 5 days per week") 
 
