@@ -214,7 +214,7 @@ brief_self_plot
 
 #### BRIEF-2  Parent-Report
 
-```{r, include=FALSE, fig.height=8, fig.width=10}
+```{r, include=TRUE, fig.height=8, fig.width=10}
 brief_parent_plot
 ```
 
@@ -397,13 +397,13 @@ class_self_2_plot
 
 #### CLASS Parent 1
 
-```{r, include=FALSE, fig.height=8, fig.width=10}
+```{r, include=TRUE, fig.height=8, fig.width=10}
 class_parent_1_plot
 ```
 
 #### CLASS parent 2
 
-```{r, include=FALSE, fig.height=8, fig.width=11}
+```{r, include=TRUE, fig.height=8, fig.width=11}
 class_parent_2_plot
 ```
 
