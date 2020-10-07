@@ -473,7 +473,7 @@ status_plot_all <- ggplot(status_all, aes(session, status)) +
   theme_classic() +
   theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
   labs(x = "Session",
-       y = "Minutes Engaged in Online Literature Lecture\n (Weekly Average)",
+       y = "Minutes Engaged in Online Literature Lecture\n (Weekly Average Across Lectures)",
        title = "Status Tracking Goal",
        caption = "60-minute lecture, 5 days per week") 
 
