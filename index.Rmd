@@ -116,6 +116,7 @@ gas_tbl <- gas %>%
 gas_tbl
 ```
 
+
 ### BRIEF-2 {.tabset .tabset-fade .tabset-pills}
 
 ```{r, include=FALSE}
@@ -228,6 +229,45 @@ brief_tbl <- function(df) {
 }
   
 brief_tbl(brief_self)
+
+brief_self_2 <- brief_self %>% 
+  filter(`Scale/Index` != "Initiate Scale",
+         `Scale/Index` != "Organization Scale")
+
+
+
+brief_self_2 %>% 
+  reactable(
+    columns = list(
+      `Scale/Index` = colDef(align = "center"),
+      `Pre Baseline Phase` = colDef(name = "Pre Baseline Phase",
+                                    align = "center",
+                                    style = function(value) {
+                                      if (value >= 65) {
+                                        color <- "#e00000"
+                                      } else if (value < 65) {
+                                        color <- "#008000"
+                                      } else {
+                                        color <- "#777"
+                                      } 
+                                       list(color = color, fontWeight = "bold")
+                                    }
+                                      ),
+      `Pre Experimental Phase` = colDef(name = "Pre Experimental Phase",
+                                        align = "center"),
+      `Post Treatment` = colDef(name = "Post Treatment",
+                                align = "center")),
+    pagination = FALSE,
+    striped = TRUE,
+    outlined = TRUE,
+    compact = TRUE,
+    highlight = TRUE,
+    bordered = TRUE,
+    searchable = TRUE,
+    height = 600,
+    width = 500)
+
+
 ```
 
 #### BRIEF-2 Self-Report
@@ -239,7 +279,36 @@ brief_self_plot
 #### BRIEF-2 Self-Report Table
 
 ```{r, include=TRUE, fig.height=8}
-brief_tbl(brief_self)
+brief_self_2 %>% 
+  reactable(
+    columns = list(
+      `Scale/Index` = colDef(align = "center"),
+      `Pre Baseline Phase` = colDef(name = "Pre Baseline Phase",
+                                    align = "center",
+                                    style = function(value) {
+                                      if (value >= 65) {
+                                        color <- "#e00000"
+                                      } else if (value < 65) {
+                                        color <- "#008000"
+                                      } else {
+                                        color <- "#777"
+                                      } 
+                                       list(color = color, fontWeight = "bold")
+                                    }
+                                      ),
+      `Pre Experimental Phase` = colDef(name = "Pre Experimental Phase",
+                                        align = "center"),
+      `Post Treatment` = colDef(name = "Post Treatment",
+                                align = "center")),
+    pagination = FALSE,
+    striped = TRUE,
+    outlined = TRUE,
+    compact = TRUE,
+    highlight = TRUE,
+    bordered = TRUE,
+    searchable = TRUE,
+    height = 600,
+    width = 500)
 ```
 
 #### BRIEF-2  Parent-Report
@@ -251,7 +320,36 @@ brief_parent_plot
 #### BRIEF-2 Parent-Report Table
 
 ```{r, include=TRUE, fig.height=8}
-brief_tbl(brief_parent)
+brief_parent %>% 
+  reactable(
+    columns = list(
+      `Scale/Index` = colDef(align = "center"),
+      `Pre Baseline Phase` = colDef(name = "Pre Baseline Phase",
+                                    align = "center",
+                                    style = function(value) {
+                                      if (value >= 65) {
+                                        color <- "#e00000"
+                                      } else if (value < 65) {
+                                        color <- "#008000"
+                                      } else {
+                                        color <- "#777"
+                                      } 
+                                       list(color = color, fontWeight = "bold")
+                                    }
+                                      ),
+      `Pre Experimental Phase` = colDef(name = "Pre Experimental Phase",
+                                        align = "center"),
+      `Post Treatment` = colDef(name = "Post Treatment",
+                                align = "center")),
+    pagination = FALSE,
+    striped = TRUE,
+    outlined = TRUE,
+    compact = TRUE,
+    highlight = TRUE,
+    bordered = TRUE,
+    searchable = TRUE,
+    height = 600,
+    width = 500)
 ```
 
 ### CLASS {.tabset .tabset-fade .tabset-pills}
@@ -456,7 +554,7 @@ class_self_1_plot
 class_self_2_plot
 ```
 
-#### ClASS Self Table
+#### CLASS Self Table
 
 ```{r, include=TRUE, fig.height=8}
 class_tbl(class_self_all)
