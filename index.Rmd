@@ -68,6 +68,9 @@ gas <- import(here("data", "KAHI_gas.xlsx"),
 
 demo <- import(here("data", "KAHI_demo.xlsx"),
                setclass = "tbl_df")
+
+strategy <- import(here("data", "KAHI_strategy.xlsx"),
+               setclass = "tbl_df")
 ```
 
 ## Demographic Information 
@@ -827,4 +830,60 @@ status_plot_all
 
 ```{r, include=TRUE}
 status_plot_all
+```
+
+### Repeated Strategy Measurements {.tabset .tabset-fade .tabset-pills}
+
+Cognitive Strategy: Engage in online lecture for 20 minutes removed from distractions, take a 5-minute break, and rejoin online lecture. 
+
+
+#### Frequency of Strategy Use
+
+```{r, include=FALSE}
+
+#head(strategy)
+
+
+#freq_plot <- ggplot(strategy, aes(session, freq)) +
+  #geom_line() +
+  #geom_point(size = 2) +
+  #scale_x_continuous(limits = c(7, 13),
+                    # breaks = c(7, 8, 9, 10, 11, 12, 13)) +
+ # scale_y_continuous(limits = c(0, 2),
+                    # breaks = c(0, 1, 2)) +
+ # theme_classic() +
+ # theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+ # labs(x = "Session",
+      # y = "Number of Reminders",
+       #title = "Weekly Number of Study Reminders Adhered To") 
+  
+#freq_plot
+
+
+#help_plot <- ggplot(strategy, aes(session, help)) +
+  #geom_line() +
+  #geom_point(size = 2) +
+  #scale_x_continuous(limits = c(4, 13),
+                     #breaks = c(4, 5, 6, 7, 8, 9, 10, 11, 12, 13)) +
+  #scale_y_continuous(limits = c(0, 5),
+                    # breaks = c(1, 2, 3, 4, 5)) +
+  #theme_classic() +
+  #theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  #labs(x = "Session",
+      # y = "Level of Helpfulness",
+      # title = "Perceived Helpfulness of Study Reminders",
+      # caption = "1 = Not Helpful at All\n 2 = Not Helpful\n 3 = Somewhat Helpful\n 4 = Helpful\n 5 = Very Helpful") 
+
+#help_plot
+
+```
+
+```{r, include=TRUE}
+#freq_plot
+```
+
+#### Perceived Strategy Helpfulness
+
+```{r, include=TRUE}
+#help_plot
 ```
