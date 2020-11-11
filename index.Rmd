@@ -852,7 +852,7 @@ status_plot
 
 ### Repeated Strategy Measurements {.tabset .tabset-fade .tabset-pills}
 
-Cognitive Strategy: Engage in online lecture for 20 minutes removed from distractions, take a 5-minute break, and rejoin online lecture. 
+Cognitive Strategy: Engage in online lecture for 15 minutes removed from distractions, take a 5-minute break, and rejoin online lecture for at least 15 more minutes. 
 
 
 #### Frequency of Strategy Use
