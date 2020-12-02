@@ -854,8 +854,10 @@ status_plot
 
 Cognitive Strategy: Engage in online lecture for 15 minutes removed from distractions, take a 5-minute break, and rejoin online lecture for at least 15 more minutes. 
 
+Cognitive Strategy 2: Set reminders in phone to remember to take a break during lecture (developed during session 10 to be measured sessions 11-13).
 
-#### Frequency of Strategy Use
+
+#### Frequency of Break Strategy 
 
 ```{r, include=FALSE}
 
@@ -901,8 +903,14 @@ help_plot
 freq_plot
 ```
 
-#### Perceived Strategy Helpfulness
+#### Perceived Helpfulness of Break Strategy 
 
 ```{r, include=TRUE}
 help_plot
 ```
+
+
+#### Frequency of Use of Reminders Strategy 
+
+
+#### Perceived Helpfulness of Reminders Strategy 
