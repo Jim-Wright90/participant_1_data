@@ -857,7 +857,7 @@ Cognitive Strategy: Engage in online lecture for 15 minutes removed from distrac
 Cognitive Strategy 2: Set reminders in phone to remember to take a break during lecture (developed during session 10 to be measured sessions 11-13).
 
 
-#### Frequency of Break Strategy 
+#### Frequency of Use of Break Strategy 
 
 ```{r, include=FALSE}
 
@@ -875,7 +875,7 @@ freq_plot <- ggplot(strategy, aes(session, freq)) +
   theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
   labs(x = "Session",
       y = "Number of Lectures per Week\n Implementing Break Strategy",
-      title = "Frequency of Strategy Use",
+      title = "Frequency of Use of Break Strategy",
       caption = "60-minute lecture, 2 days per week") 
   
 freq_plot
@@ -912,5 +912,48 @@ help_plot
 
 #### Frequency of Use of Reminders Strategy 
 
+```{r, include=FALSE}
+freq_plot2 <- ggplot(strategy, aes(session, freq_2)) +
+  geom_line() +
+  geom_point(size = 2) +
+  scale_x_continuous(limits = c(11, 13),
+                    breaks = c(11, 12, 13)) +
+  scale_y_continuous(limits = c(0, 2),
+                    breaks = c(0, 1, 2)) +
+  theme_classic() +
+  theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  labs(x = "Session",
+      y = "Number of Reminders Set per Week\n to Take Break during Lecture",
+      title = "Frequency of Use of Reminder Strategy",
+      caption = "60-minute lecture, 2 days per week") 
+
+freq_plot2
+
+help_plot2 <- ggplot(strategy, aes(session, help_2)) +
+  geom_line() +
+  geom_point(size = 2) +
+  scale_x_continuous(limits = c(11, 13),
+                     breaks = c(11, 12, 13)) +
+  scale_y_continuous(limits = c(0, 5),
+                     breaks = c(1, 2, 3, 4, 5)) +
+  theme_classic() +
+  theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
+  labs(x = "Session",
+       y = "Helpfulness of Reminders Strategy",
+       title = "Perceived Helpfulness of Strategy",
+       caption = "1 = Not Helpful at All\n 2 = Not Helpful\n 3 = Somewhat Helpful\n 4 = Helpful\n 5 = Very Helpful") 
+
+help_plot2
+
+
+```
+
+```{r, include=TRUE}
+freq_plot2
+```
 
 #### Perceived Helpfulness of Reminders Strategy 
+
+```{r, include=TRUE}
+help_plot2
+```
