@@ -71,6 +71,9 @@ demo <- import(here("data", "KAHI_demo.xlsx"),
 
 strategy <- import(here("data", "KAHI_strategy.xlsx"),
                setclass = "tbl_df")
+
+tarf <- import(here("data", "KAHI_TARF.xlsx"),
+                   setclass = "tbl_df")
 ```
 
 ## Demographic Information 
@@ -751,6 +754,13 @@ class_tbl(class_parent_all)
 
 ### PCSS {.tabset .tabset-fade .tabset-pills}
 
+Pre-baseline symptom severity levels that guided treatment selection:
+
+  * Difficulty concentrating 
+  * Feeling "slow"
+  * Feeling "foggy"
+  * Cognitive symptom cluster 
+
 ```{r, include=FALSE}
 head(pcss)
 
@@ -772,7 +782,7 @@ pcss_table <- pcss %>%
     bordered = TRUE,
     searchable = TRUE,
     height = 600,
-    width = 500)
+    width = 600)
 
 pcss_items <- pcss[1:22, ]
 pcss_total_cluster <- pcss[23:29, ]
@@ -796,7 +806,12 @@ pcss_items_tbl <- pcss_items %>%
                                       list(background = color)
                                     }),
       `Post Treatment` = colDef(name = "Post Treatment",
-                                align = "center")),
+                                align = "center",
+                                style = function(value) {
+                                      normalized <- (value - min(pcss_items$`Post Treatment`)) / (max(pcss_items$`Post Treatment` - min(pcss_items$`Post Treatment`)))
+                                      color <- orange_pal(normalized)
+                                      list(background = color)
+                                    })),
     pagination = FALSE,
     striped = TRUE,
     outlined = TRUE,
@@ -805,7 +820,7 @@ pcss_items_tbl <- pcss_items %>%
     bordered = TRUE,
     searchable = TRUE,
     height = 600,
-    width = 500)
+    width = 600)
 
 pcss_cluster_tbl <- pcss_total_cluster %>% 
   reactable(
@@ -826,7 +841,12 @@ pcss_cluster_tbl <- pcss_total_cluster %>%
                                       list(background = color)
                                     }),
       `Post Treatment` = colDef(name = "Post Treatment",
-                                align = "center")),
+                                align = "center",
+                                style = function(value) {
+                                      normalized <- (value - min(pcss_total_cluster$`Post Treatment`)) / (max(pcss_total_cluster$`Post Treatment` - min(pcss_total_cluster$`Post Treatment`)))
+                                      color <- orange_pal(normalized)
+                                      list(background = color)
+                                    })),
     pagination = FALSE,
     striped = TRUE,
     outlined = TRUE,
@@ -835,7 +855,7 @@ pcss_cluster_tbl <- pcss_total_cluster %>%
     bordered = TRUE,
     searchable = TRUE,
     height = 600,
-    width = 500)
+    width = 600)
 
 ```
 
@@ -1016,3 +1036,34 @@ freq_plot2
 ```{r, include=TRUE}
 help_plot2
 ```
+
+
+## Treatment Implementation Measurements 
+
+### TARF 
+
+The TARF is used to measure social validity. 
+
+```{r, include=FALSE}
+head(tarf)
+
+tarf_tbl <- tarf %>% 
+  reactable(columns = list(
+    Question = colDef(align = "left"),
+    Response = colDef(align = "center")),
+    striped = TRUE,
+    outlined = TRUE,
+    compact = TRUE,
+    highlight = TRUE,
+    bordered = TRUE,
+    height = 500,
+    width = 600)
+```
+
+```{r, include=TRUE}
+tarf_tbl
+```
+
+### Treatment Compliance 
+
+Participant 1 rescheduled her tenth session two consecutive weeks, resulting in two total canceled/rescheduled sessions. 
