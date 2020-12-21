@@ -128,6 +128,7 @@ gas_tbl
 Self-report responses that guided treatment at time of pre-baseline data collection:
 
   * Self-Monitor Scale
+  * Task Completion Scale
   * Plan/Organize Scale
   * Cognitive Regulation Index 
   
@@ -931,9 +932,9 @@ status_plot
 
 Cognitive Strategy: Engage in online lecture for 15 minutes removed from distractions, take a 5-minute break, and rejoin online lecture for at least 15 more minutes. 
 
-Cognitive Strategy 2: Set reminders in phone to remember to take a break during lecture (developed during session 10 to be measured sessions 11-13).
+Cognitive Strategy 2: Set reminders in phone to remember to take a break during lecture (developed during session 10 to be measured sessions 11-13). Participant will adhere to the two set reminders per week.
 
-  * Discussion to add additional reminders to best utilize strategy to re-engage in lecture (6 reminders per class lecture) occurred during session 12. 
+  * Discussion to add additional reminders to best utilize strategy to re-engage in lecture (6 reminders per class lecture) occurred during session 12. Strategy adjusted to adhere to the 12 set reminders per week. 
 
 
 #### Frequency of Use of Break Strategy 
@@ -991,18 +992,20 @@ help_plot
 
 #### Frequency of Use of Reminders Strategy 
 
+Participant reported she only attended one class period prior to session 13 due to the start of the holiday break, which reduced her ability to adhere to all 12 reminders. She further clarified it was a reduced class period, so she only felt the need to adhere to 3 out of the 6 reminders per that class period to utilize the break strategy; however, she reported positive benefit of the reminders strategy. 
+
 ```{r, include=FALSE}
 freq_plot2 <- ggplot(strategy, aes(session, freq_2)) +
   geom_line() +
   geom_point(size = 2) +
   scale_x_continuous(limits = c(11, 13),
                     breaks = c(11, 12, 13)) +
-  scale_y_continuous(limits = c(0, 2),
-                    breaks = c(0, 1, 2)) +
+  scale_y_continuous(limits = c(0, 12),
+                    breaks = c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)) +
   theme_classic() +
   theme(plot.title = element_text(color = "black", face = "bold", hjust = 0.5)) +
   labs(x = "Session",
-      y = "Number of Reminders Set per Week\n to Take Break during Lecture",
+      y = "Number of Reminders Adhered to",
       title = "Frequency of Use of Reminder Strategy",
       caption = "60-minute lecture, 2 days per week") 
 
