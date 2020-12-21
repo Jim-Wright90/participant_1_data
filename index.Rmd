@@ -100,6 +100,10 @@ demo_tbl
 
 ## Outcome Measurements 
 
+During the final session when discussing final outcome measurements (specifically the BRIEF, CLASS, and PCSS), the participant believed the general, negative trend in her responses across the three time points of collection was due to the demands of school. The participant enrolled in the study at the beginning of her school year where she believed her concussion was not severely impacting her academic performance. As the school year progressed in tandem with the study, she believed the increase in her academic demands was exacerbated by her concussion (e.g. much more time looking at a screen compared to the summer).
+
+The participant also reported that increased awareness to her perceived deficits influenced her responses on the post-treatment outcome measurements. 
+
 ### GAS Hierarchy - Number of minutes per class engaged in online Literature lecture (60 minute class)
 
 ```{r, include=FALSE}
